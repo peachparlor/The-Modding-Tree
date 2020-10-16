@@ -42,7 +42,7 @@ addLayer("W", {
             return "which are boosting waffles by "+format(eff.waffleBoost)+" and increasing the Ice Cream cap by "+format(eff.icecreamCap)
         },
         milestones: {
-            0: {requirementDescription: "3 String",
+            0: {requirementDescription: "3 Lollipops",
                 done() {return player[this.layer].best.gte(3)}, // Used to determine when to give the milestone
                 effectDescription: "Unlock the next milestone",
             },
