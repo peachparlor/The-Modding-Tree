@@ -322,7 +322,6 @@ addLayer("c", {
         }},
         nodeStyle() {return { // Style on the layer node
             'color': '#3325CC',
-            'text-decoration': 'underline' 
         }},
         componentStyles: {
             "challenge"() {return {'height': '200px'}},
