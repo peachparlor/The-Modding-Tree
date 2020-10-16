@@ -2,7 +2,7 @@ addLayer("c", {
         layer: "W", // This is assigned automatically, both to the layer and all upgrades, etc. Shown here so you know about it
         name: "Web", // This is optional, only used in a few places, If absent it just uses the layer id.
         symbol: "W", // This appears on the layer's node. Default is the id with the first letter capitalized
-        position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+        position: 3, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
         startData() { return {
             unlocked: true,
 			points: new Decimal(0),
@@ -13,7 +13,7 @@ addLayer("c", {
         }},
         color: "#4BDC13",
         requires: new Decimal(10), // Can be a function that takes requirement increases into account
-        resource: "lollipops", // Name of prestige currency
+        resource: "string", // Name of prestige currency
         baseResource: "candies", // Name of resource prestige is based on
         baseAmount() {return player.points}, // Get the current amount of baseResource
         type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
