@@ -11,10 +11,10 @@ addLayer("c", {
             buyables: {}, // You don't actually have to initialize this one
             beep: false,
         }},
-        color: "#4BDC13",
+        color: "#C0C0C0",
         requires: new Decimal(10), // Can be a function that takes requirement increases into account
-        resource: "lollipops", // Name of prestige currency
-        baseResource: "candies", // Name of resource prestige is based on
+        resource: "String", // Name of prestige currency
+        baseResource: "Thread", // Name of resource prestige is based on
         baseAmount() {return player.points}, // Get the current amount of baseResource
         type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
         exponent: 0.5, // Prestige currency exponent
