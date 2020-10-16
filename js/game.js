@@ -5,9 +5,9 @@ var gameEnded = false;
 
 
 let modInfo = {
-	name: "The Modding Tree",
-	id: "modbase",
-	pointsName: "points",
+	name: "The Prestige Web",
+	id: "prestigewebsave",
+	pointsName: "thread",
 	discordName: "",
 	discordLink: "",
 	changelogLink: "https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md",
