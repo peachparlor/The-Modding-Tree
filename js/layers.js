@@ -1,7 +1,7 @@
-addLayer("c", {
-        layer: "c", // This is assigned automatically, both to the layer and all upgrades, etc. Shown here so you know about it
-        name: "Candies", // This is optional, only used in a few places, If absent it just uses the layer id.
-        symbol: "C", // This appears on the layer's node. Default is the id with the first letter capitalized
+addLayer("W", {
+        layer: "W", // This is assigned automatically, both to the layer and all upgrades, etc. Shown here so you know about it
+        name: "Web", // This is optional, only used in a few places, If absent it just uses the layer id.
+        symbol: "W", // This appears on the layer's node. Default is the id with the first letter capitalized
         position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
         startData() { return {
             unlocked: true,
@@ -30,7 +30,7 @@ addLayer("c", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-        row: 0, // Row the layer is in on the tree (0 is the first row)
+        row: 3, // Row the layer is in on the tree (0 is the first row)
         effect() {
             return { // Formulas for any boosts inherent to resources in the layer. Can return a single value instead of an object if there is just one effect
             waffleBoost: (true == false ? 0 : Decimal.pow(player[this.layer].points, 0.2)),
