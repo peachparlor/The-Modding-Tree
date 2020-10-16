@@ -30,7 +30,7 @@ addLayer("c", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-        row: 3, // Row the layer is in on the tree (0 is the first row)
+        row: 0, // Row the layer is in on the tree (0 is the first row)
         effect() {
             return { // Formulas for any boosts inherent to resources in the layer. Can return a single value instead of an object if there is just one effect
             waffleBoost: (true == false ? 0 : Decimal.pow(player[this.layer].points, 0.2)),
@@ -349,8 +349,8 @@ addLayer("f", {
     }},
     color: "#FE0102",
     requires() {return new Decimal(10)}, 
-    resource: "farm points", 
-    baseResource: "candies", 
+    resource: "Links", 
+    baseResource: "Thread", 
     baseAmount() {return player.points},
     type: "custom", // A "Custom" type which is effectively static
     exponent: 0.5,
