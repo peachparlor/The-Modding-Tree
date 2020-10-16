@@ -7,11 +7,11 @@ var gameEnded = false;
 let modInfo = {
 	name: "The Prestige Web",
 	id: "prestigewebsave",
-	pointsName: "thread",
+	pointsName: "thread	",
 	discordName: "",
 	discordLink: "",
 	changelogLink: "https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md",
-	offlineLimit: 1  // In hours
+	offlineLimit: 24  // In hours
 }
 
 // Set your version in num and name, but leave the tmt values so people know what version it is
