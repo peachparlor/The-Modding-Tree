@@ -90,7 +90,7 @@ addLayer("c", {
                 unlocked() { return (hasUpgrade(this.layer, 12))},
                 onPurchase() { // This function triggers when the upgrade is purchased
                     player[this.layer].unlockOrder = 0
-                    return(hasUpgrade(this.layer, 13)),
+                    return (hasUpgrade(this.layer, 13))
                 },
             },
             22: {
