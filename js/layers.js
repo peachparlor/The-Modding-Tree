@@ -23,7 +23,7 @@ addLayer("c", {
         canBuyMax() {}, // Only needed for static layers with buy max
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
-            if (hasUpgrade(this.layer, 13)) mult = mult.times(1) // These upgrades don't exist
+            if (hasUpgrade(this.layer, 13)) mult = mult + 1 // These upgrades don't exist
 			if (hasUpgrade(this.layer, 120)) mult = mult.times(upgradeEffect(this.layer, 120))
             return mult
         },
@@ -90,7 +90,6 @@ addLayer("c", {
                 unlocked() { return (hasUpgrade(this.layer, 12))},
                 onPurchase() { // This function triggers when the upgrade is purchased
                     player[this.layer].unlockOrder = 0
-                    mult = mult + 1,
                 },
             },
             22: {
