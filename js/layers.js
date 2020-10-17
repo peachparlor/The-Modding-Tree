@@ -23,7 +23,7 @@ addLayer("c", {
         canBuyMax() {}, // Only needed for static layers with buy max
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
-            if (hasUpgrade(this.layer, 13)) mult = mult + 1 // These upgrades don't exist
+            if (hasUpgrade(this.layer, 13)) mult = mult.times(2) // These upgrades don't exist
 			if (hasUpgrade(this.layer, 120)) mult = mult.times(upgradeEffect(this.layer, 120))
             return mult
         },
@@ -84,12 +84,13 @@ addLayer("c", {
                 title: "Spider Friendship",
                 description: "You've met more spiders. Thread production is doubled.",
                 cost: new Decimal(3),
-                currencyDisplayName: "candies", // Use if using a nonstandard currency
+                currencyDisplayName: "String", // Use if using a nonstandard currency
                 currencyInternalName: "points", // Use if using a nonstandard currency
                 currencyLayer: "", // Leave empty if not in a layer "e.g. points"
                 unlocked() { return (hasUpgrade(this.layer, 12))},
                 onPurchase() { // This function triggers when the upgrade is purchased
                     player[this.layer].unlockOrder = 0
+                    return(hasUpgrade(this.layer, 13)),
                 },
             },
             22: {
