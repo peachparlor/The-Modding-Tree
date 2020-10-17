@@ -69,6 +69,7 @@ addLayer("c", {
                 unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
             },
             12: {
+                title: "A Second Spider",
                 description: "Thread spinning is faster based on your unspent String.",
                 cost: new Decimal(1),
                 unlocked() { return (hasUpgrade(this.layer, 11))},
@@ -88,16 +89,6 @@ addLayer("c", {
                 unlocked() { return (hasUpgrade(this.layer, 12))},
                 onPurchase() { // This function triggers when the upgrade is purchased
                     player[this.layer].unlockOrder = 0
-                },
-                style() {
-                    if (hasUpgrade(this.layer, this.id)) return {
-                    'background-color': '#1111dd' 
-                    }
-                    else if (!canAffordUpgrade(this.layer, this.id)) {
-                        return {
-                            'background-color': '#dd1111' 
-                        }
-                    } // Otherwise use the default
                 },
             },
             22: {
@@ -299,6 +290,8 @@ addLayer("c", {
         }},
         nodeStyle() {return { // Style on the layer node
             'color': '#3325CC',
+            'position': 'relative',
+            'top': '40px',
         }},
         componentStyles: {
             "challenge"() {return {'height': '200px'}},
