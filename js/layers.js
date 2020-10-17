@@ -59,43 +59,21 @@ addLayer("c", {
         
                 },
         },
-        challenges: {
-            rows: 2,
-    		cols: 12,
-		    11: {
-                name: "Fun",
-                completionLimit: 3,
-			    challengeDescription() {return "Makes the game 0% harder<br>"+challengeCompletions(this.layer, this.id) + "/" + this.completionLimit + " completions"},
-			    unlocked() { return player[this.layer].best.gt(0) },
-                goal: new Decimal("20"),
-                currencyDisplayName: "lollipops", // Use if using a nonstandard currency
-                currencyInternalName: "points", // Use if using a nonstandard currency
-                currencyLayer: this.layer, // Leave empty if not in a layer
-                rewardEffect() {
-                    let ret = player[this.layer].points.add(1).tetrate(0.02)
-                    return ret;
-                },
-                rewardDisplay() { return format(this.rewardEffect())+"x" },
-                countsAs: [12, 21], // Use this for if a challenge includes the effects of other challenges. Being in this challenge "counts as" being in these.
-                rewardDescription: "Says hi",
-                onComplete() {console.log("hiii")} // Called when you complete the challenge
-            },
-        }, 
         upgrades: {
             rows: 2,
             cols: 3,
             11: {
-                title: "Generator of Genericness",
-                description: "Gain 1 Point every second.",
+                title: "A Spider",
+                description: "Spin 1 Thread every second.",
                 cost: new Decimal(1),
                 unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
             },
             12: {
-                description: "Candy generation is faster based on your unspent Lollipops.",
+                description: "Thread spinning is faster based on your unspent String.",
                 cost: new Decimal(1),
                 unlocked() { return (hasUpgrade(this.layer, 11))},
                 effect() { // Calculate bonuses from the upgrade. Can return a single value or an object with multiple values
-                    let ret = player[this.layer].points.add(1).pow(player[this.layer].upgrades.includes(24)?1.1:(player[this.layer].upgrades.includes(14)?0.75:0.6)) 
+                    let ret = player[this.layer].points.add(1).pow(player[this.layer].upgrades.includes(24)?1.1:(player[this.layer].upgrades.includes(14)?1:0.6)) 
                     if (ret.gte("1e20000000")) ret = ret.sqrt().times("1e10000000")
                     return ret;
                 },
