@@ -33,7 +33,7 @@ addLayer("c", {
         row: 0, // Row the layer is in on the tree (0 is the first row)
         effect() {
             return { // Formulas for any boosts inherent to resources in the layer. Can return a single value instead of an object if there is just one effect
-            webBoost: (true == false ? 0 : Decimal.pow(player[this.layer].points, 0.2)),
+            webBoost: (true == false ? 0 : Decimal.pow(player[this.layer].points, 0.5)),
             icecreamCap: (player[this.layer].points * 10)
         }},
         effectDescription() { // Optional text to describe the effects
