@@ -81,12 +81,13 @@ addLayer("c", {
                 effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
             },
             13: {
+                title: "Spider Friendship",
                 description: "You've met more spiders. Thread production is doubled.",
                 cost: new Decimal(3),
                 currencyDisplayName: "candies", // Use if using a nonstandard currency
                 currencyInternalName: "points", // Use if using a nonstandard currency
                 currencyLayer: "", // Leave empty if not in a layer "e.g. points"
-                unlocked() { return (hasUpgrade(this.layer, 12))},
+                unlocked() { return (hasUpgrade(this.layer, 13))},
                 onPurchase() { // This function triggers when the upgrade is purchased
                     player[this.layer].unlockOrder = 0
                 },
