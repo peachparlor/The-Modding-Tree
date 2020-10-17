@@ -39,15 +39,14 @@ addLayer("c", {
         effectDescription() { // Optional text to describe the effects
             eff = this.effect();
             eff.webBoost = eff.webBoost.times(buyableEffect(this.layer, 11).first)
-            return "which are boosting waffles by "+format(eff.webBoost)+" and increasing the Ice Cream cap by "+format(eff.icecreamCap)
+            return "which increases Web by "+format(eff.webBoost)+" and increasing the Ice Cream cap by "+format(eff.icecreamCap)
         },
         milestones: {
             0: {requirementDescription: "3 Lollipops",
-                done() {return player[this.layer].best.gte(3)}, // Used to determine when to give the milestone
+                done() {return player[this.layer].best.gte(5)}, // Used to determine when to give the milestone
                 effectDescription: "Unlock the next milestone",
             },
             1: {requirementDescription: "4 Lollipops",
-                unlocked() {return hasMilestone(this.layer, 0)},
                 done() {return player[this.layer].best.gte(4)},
                 effectDescription: "You can toggle beep and boop (which do nothing)",
                 toggles: [
