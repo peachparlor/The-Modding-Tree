@@ -23,7 +23,7 @@ addLayer("c", {
         canBuyMax() {}, // Only needed for static layers with buy max
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
-            if (hasUpgrade(this.layer, 166)) mult = mult.times(2) // These upgrades don't exist
+            if (hasUpgrade(this.layer, 13)) mult = mult.times(2) // These upgrades don't exist
 			if (hasUpgrade(this.layer, 120)) mult = mult.times(upgradeEffect(this.layer, 120))
             return mult
         },
@@ -81,7 +81,7 @@ addLayer("c", {
                 effectDisplay() { return format(this.effect())+"x" }, // Add formatting to the effect
             },
             13: {
-                description: "Unlock a <b>secret subtab</b> and make this layer act if you unlocked it first.",
+                description: "You've met more spiders. Thread production is doubled.",
                 cost: new Decimal(3),
                 currencyDisplayName: "candies", // Use if using a nonstandard currency
                 currencyInternalName: "points", // Use if using a nonstandard currency
